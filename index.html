@@ -23,7 +23,7 @@
         <meta name="author" content="Muaz Khan">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <link rel="stylesheet" href="https://www.webrtc-experiment.com/style.css">
+        <link rel="stylesheet" href="style.css">
 
         <style>
             audio, video {
@@ -80,14 +80,14 @@
         </script>
 
         <!-- This Library is used to detect WebRTC features -->
-        <script src="https://www.webrtc-experiment.com/DetectRTC.js"></script>
+        <script src="DetectRTC.js"></script>
 
-        <script src="https://www.webrtc-experiment.com/socket.io.js"> </script>
-        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
-        <script src="https://www.webrtc-experiment.com/IceServersHandler.js"></script>
-        <script src="https://www.webrtc-experiment.com/CodecsHandler.js"></script>
-        <script src="https://www.webrtc-experiment.com/RTCPeerConnection-v1.5.js"> </script>
-        <script src="https://www.webrtc-experiment.com/webrtc-broadcasting/broadcast.js"> </script>
+        <script src="socket.io.js"> </script>
+        <script src="adapter/adapter-latest.js"></script>
+        <script src="IceServersHandler.js"></script>
+        <script src="CodecsHandler.js"></script>
+        <script src="RTCPeerConnection-v1.5.js"> </script>
+        <script src="webrtc-broadcasting/broadcast.js"> </script>
     </head>
 
     <body>
@@ -96,26 +96,7 @@
                 <h1>
                     WebRTC Video Broadcasting
                 </h1>
-                <p>
-                    <a href="https://www.webrtc-experiment.com/">HOME</a>
-                    <span> &copy; </span>
-                    <a href="http://www.MuazKhan.com/" target="_blank">Muaz Khan</a>
-
-                    .
-                    <a href="http://twitter.com/WebRTCWeb" target="_blank" title="Twitter profile for WebRTC Experiments">@WebRTCWeb</a>
-
-                    .
-                    <a href="https://github.com/muaz-khan?tab=repositories" target="_blank" title="Github Profile">Github</a>
-
-                    .
-                    <a href="https://github.com/muaz-khan/WebRTC-Experiment/issues?state=open" target="_blank">Latest issues</a>
-
-                    .
-                    <a href="https://github.com/muaz-khan/WebRTC-Experiment/commits/master" target="_blank">What's New?</a>
-                </p>
             </header>
-
-            <div class="github-stargazers"></div>
 
             <!-- copy this <section> and next <script> -->
             <section class="experiment">
@@ -138,9 +119,17 @@
 
             <script>
                 // Muaz Khan     - https://github.com/muaz-khan
-                // MIT License   - https://www.webrtc-experiment.com/licence/
+                // MIT License   - licence/
                 // Documentation - https://github.com/muaz-khan/WebRTC-Experiment/tree/master/webrtc-broadcasting
-
+                document.documentElement.addEventListener("keyup", function(e) {
+                    var ev = e || window.event; // window.event for IE fallback
+                    //  $('join').keypress(function(e){
+                    if(e.keyCode==13){
+                        console.log("on click the join button");
+                        document.getElementsByClassName("join")[0].click();
+                    }
+                        //});
+                });
                 var config = {
                     openSocket: function(config) {
                         var SIGNALING_SERVER = 'https://socketio-over-nodejs2.herokuapp.com:443/';
@@ -180,7 +169,7 @@
 
                         var tr = document.createElement('tr');
                         tr.innerHTML = '<td><strong>' + room.roomName + '</strong> is broadcasting his media!</td>' +
-                            '<td><button class="join">Join</button></td>';
+                            '<td><button id="joinbtn" class="join">Join</button></td>';
                         roomsList.appendChild(tr);
 
                         var joinRoomButton = tr.querySelector('.join');
@@ -344,14 +333,14 @@
         <a href="https://github.com/muaz-khan/WebRTC-Experiment/tree/master/webrtc-broadcasting" class="fork-left"></a>
 
         <footer>
-            <p>
-                <a href="https://www.webrtc-experiment.com/">WebRTC Experiments</a>
+           <!-- <p>
+                <a href="">WebRTC Experiments</a>
                 © <a href="https://plus.google.com/+MuazKhan" rel="author" target="_blank">Muaz Khan</a>
                 <a href="mailto:muazkh@gmail.com" target="_blank">muazkh@gmail.com</a>
-            </p>
+           </p> -->
         </footer>
 
         <!-- commits.js is useless for you! It is not part of this WebRTC Experiment. -->
-        <script src="https://www.webrtc-experiment.com/commits.js" async> </script>
+        <script src="commits.js" async> </script>
     </body>
 </html>
