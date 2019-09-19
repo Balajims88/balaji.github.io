@@ -17,7 +17,6 @@ article, footer {
 }
 
 article {
-    background: #fff;
     border: 1px solid;
     border-color: #ddd #aaa #aaa #ddd;
     margin: 2.5em auto 0 auto;
