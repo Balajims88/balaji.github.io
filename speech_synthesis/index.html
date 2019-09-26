@@ -1,0 +1,51 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div id="page-wrapper">
+  <h1>Web Speech Synthesis Demo</h1>
+  
+  <p id="msg"></p>
+
+  <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech>
+  
+  <div>
+  <p>
+	<button id="getvoices" class="getvoices">Get Voices</button>
+  </p>
+  </div>
+	<div class="option">
+		<label for="volume">Volume [0.0-1.0] </label>
+		<input type="text" name="volume" id="volume" value="1">
+	</div>
+	<div class="option">
+		<label for="rate">Rate [1-10] </label>
+		<input type="text" name="rate" id="rate" value="1">
+	</div>
+	
+  <div id="buttons-container">
+	<button id="speak">Speak</button>
+    <button id="pause">Pause</button>
+    <button id="resume">Resume</button>
+    <button id="cancel">Cancel</button>
+  </div>
+
+  <hr>
+
+  <div class="option">
+  	<label for="voice">Voice</label>
+  	<select name="voice" id="voice"></select>
+  </div>
+  
+  <hr>
+
+  <div>
+  <p id="progress"></p>
+  </div>
+
+</div>
+</body>
+<script src="ss_script.js"></script>
+</html>
