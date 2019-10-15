@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  background-color: white;
+}
+</style>
+
+<body>
+
+<audio id="myAudio">
+  <!--<source src="https://comcast.app.hulu.com/build_files/comcast/1/11bffef6a07d.85cdc58a07b5/resources/sounds/sound-salutation.wav" type="audio/wav">-->
+  <source src="https://file-examples.com/wp-content/uploads/2017/11/file_example_MP3_700KB.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<p>Click the buttons to play or pause the audio.</p>
+
+<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button> 
+<button onclick="loadAudio()" type="button">Load Audio</button> 
+
+<script>
+
+
+
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+
+function loadAudio() {
+  x.load();
+}
+
+</script>
+
+</body>
+</html>
