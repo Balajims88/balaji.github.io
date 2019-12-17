@@ -1,8 +1,8 @@
 // Last time updated on: Dec 22, 2018
 
-// Muaz Khan     - github.com/muaz-khan
+// Balaji Selvam     - github.com/balajims88
 // MIT License   - www.WebRTC-Experiment.com/licence
-// Documentation - github.com/muaz-khan/WebRTC-Experiment/tree/master/RTCPeerConnection
+// Documentation - github.com/balajims88/WebRTC-Experiment/tree/master/RTCPeerConnection
 
 if (typeof window.RTCPeerConnection !== 'undefined') {
     window.RTCPeerConnection00 = window.RTCPeerConnection;
@@ -273,8 +273,8 @@ var IceServersHandler = (function() {
                     'stun:webrtcweb.com:7788', // coTURN
                     'stun:webrtcweb.com:7788?transport=udp', // coTURN
                 ],
-                'username': 'muazkh',
-                'credential': 'muazkh'
+                'username': 'balaji',
+                'credential': 'balaji'
             },
             {
                 'urls': [
@@ -284,8 +284,8 @@ var IceServersHandler = (function() {
                     'turn:webrtcweb.com:8877?transport=udp', // coTURN udp
                     'turn:webrtcweb.com:8877?transport=tcp', // coTURN tcp
                 ],
-                'username': 'muazkh',
-                'credential': 'muazkh'
+                'username': 'balaji',
+                'credential': 'balaji'
             },
             {
                 'urls': [
@@ -303,8 +303,8 @@ var IceServersHandler = (function() {
                     'turn:webrtcweb.com:7788',
                     'stun:webrtcweb.com:7788',
                 ],
-                'username': 'muazkh',
-                'credential': 'muazkh'
+                'username': 'balaji',
+                'credential': 'balaji'
             }];
         }
 

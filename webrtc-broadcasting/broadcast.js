@@ -1,6 +1,6 @@
-﻿// Muaz Khan         - www.MuazKhan.com
+﻿// Balaji
 // MIT License       - www.WebRTC-Experiment.com/licence
-// Experiments       - github.com/muaz-khan/WebRTC-Experiment
+// Experiments       - github.com/balajims88/WebRTC-Experiment
 
 // This library is known as multi-user connectivity wrapper!
 // It handles connectivity tasks to make sure two or more users can interconnect!

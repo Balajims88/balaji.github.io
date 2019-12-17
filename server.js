@@ -1,6 +1,6 @@
-// Muaz Khan      - www.MuazKhan.com
+// Balaji Selvam 
 // MIT License    - www.WebRTC-Experiment.com/licence
-// Documentation  - github.com/muaz-khan/getScreenId
+// Documentation  - github.com/balajims88/getScreenId
 
 var port = process.env.PORT || 9001;
 

@@ -33,7 +33,7 @@ You can:
 
 Following "channel" line makes private rooms according to the domain name.
 
-https://github.com/muaz-khan/WebRTC-Experiment/blob/master/webrtc-broadcasting/index.html#L140
+https://github.com/balajims88/WebRTC-Experiment/blob/master/webrtc-broadcasting/index.html#L140
 
 ```javascript
 var channel = config.channel || location.href.replace( /\/|:|#|%|\.|\[|\]/g , '');
@@ -230,9 +230,9 @@ All these three pages has unique channels. They'll NEVER see rooms from each oth
 
 # For signaling; please check following page:
 
-https://github.com/muaz-khan/WebRTC-Experiment/blob/master/Signaling.md
+https://github.com/balajims88/WebRTC-Experiment/blob/master/Signaling.md
 
-Remember, you can use any signaling implementation exists out there without modifying any single line! Just skip below code and open [above link](https://github.com/muaz-khan/WebRTC-Experiment/blob/master/Signaling.md)!
+Remember, you can use any signaling implementation exists out there without modifying any single line! Just skip below code and open [above link](https://github.com/balajims88/WebRTC-Experiment/blob/master/Signaling.md)!
 
 # API
 

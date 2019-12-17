@@ -5,7 +5,7 @@
 // ________________
 // DetectRTC v1.3.8
 
-// Open-Sourced: https://github.com/muaz-khan/DetectRTC
+// Open-Sourced: https://github.com/balajims88/DetectRTC
 
 // --------------------------------------------------
 // Muaz Khan     - www.MuazKhan.com
