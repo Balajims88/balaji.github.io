@@ -1,0 +1,22 @@
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>HSN Test 2</title>
+<link href="http://area53.dora.xreapps.net:8080/dora/common/css/A.dora.css.pagespeed.cf.45JYH47Qu2.css" rel="stylesheet" type="text/css"/>
+<script>//<![CDATA[
+const keys={8:{name:'last',fn:function(m){handleLast(m);}},88:{name:'last',fn:function(m){handleLast(m);}},80:{name:'play/pause',fn:function(m){handlePlayPause(m);}},179:{name:'play/pause',fn:function(m){handlePlayPause(m);}},82:{name:'rewind',fn:function(m){handleRewind(m);}},227:{name:'rewind',fn:function(m){handleRewind(m);}},70:{name:'fast-foward',fn:function(m){handleFF(m);}},228:{name:'fast-forward',fn:function(m){handleFF(m);}},}
+function handleRemoteKeys(e,mediaObject){var rkMessage={keyCode:e.keyCode,key:e.key}
+if(e.keyCode in keys){rkMessage.name=keys[e.keyCode].name;rkMessage.action='pressed';$badger.userActionMetricsHandler(rkMessage);keys[e.keyCode].fn(mediaObject);}else{rkMessage.action='ignored';}console.log(rkMessage);}function handleLast(m){if(!m.paused){m.pause();}$badger.userActionMetricsHandler('Last pressed -- exiting app.');$badger.shutdown();}function handlePlayPause(m){if(m.paused){m.play();}else{m.pause();}}function handleRewind(m){m.currentTime-=5;}function handleFF(m){m.currentTime+=5;}
+//]]></script>
+<script src="https://chariot-ga.xreapps.net/lib/money-badger.min.js"></script>
+</head>
+<body>
+<div class="outercontainer flexcolumn" id="outer_div" style="height: 620px; width: 1140px">
+<div class="banner center">HSN Test 2</div>
+<video controls id="VideoHome" autoplay>
+<source src="aamp://html5-lh.akamaihd.net/i/html5_01@182967/master.m3u8">
+</video>
+</div>
+<script>document.addEventListener('onMoneyBadgerReady',function(){var mediaObj=document.querySelector('video');document.addEventListener("keydown",function(e,m){handleRemoteKeys(e,mediaObj);});$badger.launchCompletedMetricsHandler({msg:'hsn-exp2 ready to go'});});</script>
+</body>
+</html>
