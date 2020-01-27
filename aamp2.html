@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function playPause() {
+                var myVideo = document.getElementsByTagName('video')[0];
+                if (myVideo.paused)
+                    myVideo.play();
+                else
+                    myVideo.pause();
+            }
+
+document.documentElement.addEventListener("keyup", function(e) {
+    var myVideo = document.getElementsByTagName('video')[0];
+    var ev = e || window.event; // window.event for IE fallback
+    if(ev.keyCode == 13) {
+        // toggle play/pause
+        if(myVideo.paused) { myVideo.play(); }
+        else { myVideo.pause(); }
+    }
+});
+        </script>
+
+        <div style="border: 1px solid #333;">
+            <video  id ="vid" autoplay="autoplay" style="height: 100%; width: 100%;">
+                <source src="aamp://html5-lh.akamaihd.net/i/html5_01@182967/master.m3u8" type="application/x-mpegURL">
+            </video>
+        </div>
+
+        <div style="font-size: 20pt;text-align: center;color: #00FF00; position: absolute; width: 100%; top: 20px;">
+            Press OK button to Play or Pause
+        </div>
+    </body>
+</html>

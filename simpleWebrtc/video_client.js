@@ -3,10 +3,8 @@ var name;
 var connectedUser;
   
 //connecting to our signaling server
-//var conn = new WebSocket('ws://10.0.0.198:9090');
 var conn = new WebSocket('ws://10.6.5.77:9090');
-//var conn = new WebSocket('ws://10.30.177.166:9090');
-//var conn = new WebSocket('ws://[2001:df4:2a00:3:58e6:dd6f:2e43:ccbd]:9090');
+
   
 conn.onopen = function () { 
    console.log("Connected to the signaling server"); 
@@ -73,6 +71,7 @@ function gotStream(myStream)
 				catch (error) {
 					console.log(error);
 					remoteVideo.src = URL.createObjectURL(stream);
+					remoteVideo.src.applyConstraints({ width: 100, height: 100});
 					console.log('Assigned to src');
 				}	
 				//remoteVideo.src = window.URL.createObjectURL(e.stream); 
@@ -206,17 +205,19 @@ function handleLogin(success) {
             console.log("On  Add track");
 				try {
 					remoteVideo.srcObject = e.streams[0];
+					remoteVideo.applyConstraints({ width: 100, height: 100});
 					console.log('Assigned to srcObject');
 				} 
 				catch (error) {
 					console.log(error);
 					remoteVideo.src = URL.createObjectURL(stream);
+					remoteVideo.src.applyConstraints({ width: 100, height: 100});
 					console.log('Assigned to src');
 				}	
 			
     };
 	 //getting local video stream 
-      navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+      navigator.mediaDevices.getUserMedia({ video: true })
 	  .then(gotStream)
 	  .catch(function (err) { 
 	   console.log(err.name + ": " + err.message);
@@ -269,7 +270,7 @@ yourConn.createOffer().then(function(offer) {
   });
 		
    } 
-  // document.getElementById("all").style.visibility = "hidden";
+   //document.getElementById("all").style.visibility = "hidden";
 });
 
 function handleCall() {  
@@ -324,17 +325,19 @@ function handleOffer(offer, name) {
    yourConn.setRemoteDescription(new RTCSessionDescription(offer));
     
    //create an answer to an offer 
-   yourConn.createAnswer(function (answer) { 
-      yourConn.setLocalDescription(answer); 
-        
-      send({ 
-         type: "answer", 
-         answer: answer 
-      }); 
-        
-   }, function (error) { 
-      alert("Error when creating an answer"); 
-   }); 
+   yourConn.createAnswer().then(function(answer) {
+	  console.log("promise resolved, setLocalDescription");
+	  return yourConn.setLocalDescription(answer);
+	})
+	.then(function() {
+	  // Send the answer to the remote peer through the signaling server.
+	  console.log("setLocalDescription success : Sending answer");
+	   send({ 
+			 type: "answer", 
+			 answer: yourConn.currentLocalDescription 
+		  }); 
+	})
+	.catch(); 
 };
  
 //when we got an answer from a remote user
