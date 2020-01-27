@@ -287,20 +287,20 @@ var IceServersHandler = (function() {
                 'username': 'muazkh',
                 'credential': 'muazkh'
             },*/
-            { 
+           /* {
                 'urls': [
                     'turn:ipv6.turn.twilio.com:443',
                 ],
                 'username':'e33b596a44849432777a70e6a4976d689b9d94f28b159df4e89685474d8bc54d',
                 'credential': 'd9QSgX6cWO9Izeqq6ujeS2PUL2IxFcrax7DSaa7qpFU='
-            }
-            /*{
+            }*/
+            {
                 'urls': [
                     'turn:numb.viagenie.ca',
                 ],
                 'username':'webrtc@live.com',
                 'credential': 'muazkh'
-            }*/
+            }
            /* {
                 'urls': [
                     'stun:stun.l.google.com:19302',
