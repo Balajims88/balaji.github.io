@@ -286,6 +286,13 @@ var IceServersHandler = (function() {
                 ],
                 'username': 'muazkh',
                 'credential': 'muazkh'
+            },
+            {
+                'urls': [
+                    'turn:numb.viagenie.ca',
+                ],
+                'username':'webrtc@live.com',
+                'credential': 'muazkh'
             }
            /* {
                 'urls': [
