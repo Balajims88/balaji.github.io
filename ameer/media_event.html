@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  background-color: white;
+}
+</style>
+
+<body>
+
+<p>Click the buttons to play or pause the audio.</p>
+
+<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button> 
+<button onclick="loadAudio()" type="button">Load Audio</button> 
+
+<script>
+
+var aud = new Audio();
+aud.src = "https://x1-dev-ip6.radio.com/KLLCFMAAC_SC?sbmid=84c650b8-0c09-4d32-9a0a-9419eafd9c3a&DIST=CBS&TGT=radiocomDev&SRS=CBS";
+aud.onerror=ErrorEvent;
+aud.onstalled=StalledEvent;
+
+function ErrorEvent() {
+        console.log("Bad url found, setting good url");
+        aud.src  = "https://x1-dev-ipv6.radio.com/18513_KLLCFMAAC_SC?sbmid=9dc62c87-192c-4987-83db-bfa55d77fb59&DIST=CBS&TGT=radiocomDev&SRS=CBS";
+}
+
+function StalledEvent() {
+        console.log("Stalled event received from browser");
+}
+
+function playAudio() { 
+  aud.play(); 
+} 
+
+function pauseAudio() { 
+  aud.pause(); 
+} 
+
+function loadAudio() {
+  aud.load();
+}
+
+</script>
+
+</body>
+</html>
