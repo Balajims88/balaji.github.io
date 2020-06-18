@@ -268,15 +268,15 @@ var IceServersHandler = (function() {
     function getIceServers(connection) {
         // resiprocate: 3344+4433
         // pions: 7575
-        var iceServers = [/*{
+        var iceServers = [{
                 'urls': [
                     'stun:webrtcweb.com:7788', // coTURN
                     'stun:webrtcweb.com:7788?transport=udp', // coTURN
                 ],
                 'username': 'balaji',
                 'credential': 'balaji'
-            },*/
-           /* {
+            },
+            {
                 'urls': [
                     'turn:webrtcweb.com:7788', // coTURN 7788+8877
                     'turn:webrtcweb.com:4455?transport=udp', // restund udp
@@ -286,32 +286,32 @@ var IceServersHandler = (function() {
                 ],
                 'username': 'muazkh',
                 'credential': 'muazkh'
-            },*/
-           /* {
+            },
+            {
                 'urls': [
                     'turn:ipv6.turn.twilio.com:443',
                 ],
                 'username':'e33b596a44849432777a70e6a4976d689b9d94f28b159df4e89685474d8bc54d',
                 'credential': 'd9QSgX6cWO9Izeqq6ujeS2PUL2IxFcrax7DSaa7qpFU='
-            }*/
+            },
             {
                 'urls': [
                     'turn:numb.viagenie.ca',
                 ],
                 'username':'webrtc@live.com',
                 'credential': 'muazkh'
-            }
-           /* {
+            },
+            {
                 'urls': [
                     'stun:stun.l.google.com:19302',
                     'stun:stun1.l.google.com:19302',
                     'stun:stun2.l.google.com:19302',
                     'stun:stun.l.google.com:19302?transport=udp',
                 ]
-            }*/
+            }
         ];
 
-        /*if (typeof window.InstallTrigger !== 'undefined') {
+        if (typeof window.InstallTrigger !== 'undefined') {
             iceServers = [{
                 'urls': [
                     'turn:webrtcweb.com:7788',
@@ -320,7 +320,7 @@ var IceServersHandler = (function() {
                 'username': 'muazkh',
                 'credential': 'muazkh'
             }];
-        }*/
+        }
         console.debug("iceServers", iceServers);
         return iceServers;
     }
